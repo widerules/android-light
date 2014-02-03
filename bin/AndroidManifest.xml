@@ -1,0 +1,63 @@
+<!--    Copyright (C) <2014>  Farges Maelyss
+  	Application : https://play.google.com/store/apps/developer?id=Orion+Games
+  	Blog : https://www.facebook.com/OrionGamesBlog 
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation version 3.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    see <http://www.gnu.org/licenses/> -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.orion.light"
+    android:versionCode="3"
+    android:versionName="1.6" >
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    
+    <permission android:name="android.permission.FLASHLIGHT"
+         />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+     <application
+         android:allowBackup="true"
+         android:icon="@drawable/ic_launcher"
+         android:label="@string/app_name" >
+         <activity
+             android:name="Light"
+             android:label="@string/app_name"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoDisplay" >
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+         
+         <activity
+             android:name="LightScreen"
+             android:label="@string/app_name"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+         </activity>
+
+         <service
+             android:name=".LightFlash"
+             android:label="Light Flash" >
+         </service>
+
+         
+     </application>
+    
+</manifest>
